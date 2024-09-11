@@ -1,0 +1,103 @@
+.hidden {
+    display: none;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+/* 배경 이미지 설정 */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('path/to/your/background-image.jpg'); /* 여기에 배경 이미지 경로 추가 */
+    background-size: cover; /* 배경 이미지가 화면 전체를 덮도록 설정 */
+    background-position: center; /* 배경 이미지가 중앙에 위치하도록 설정 */
+    z-index: -1; /* 배경 이미지가 모든 콘텐츠 뒤에 위치하도록 설정 */
+}
+
+/* Greetings */
+#greeting {
+    font-size: 48px;
+    color: rgb(58, 156, 221);
+    text-align: center;
+    margin-bottom: 10px; /* clock과의 간격 조정 */
+    position: relative; /* 위치 조정 가능하게 설정 */
+    z-index: 1; /* 배경 이미지보다 앞에 있도록 설정 */
+}
+
+/* Clock */
+#clock {
+    font-size: 36px;
+    color: rgb(46, 199, 219);
+    text-align: center;
+    margin-bottom: 20px; /* todo와의 간격 조정 */
+    position: relative;
+    z-index: 1;
+}
+
+/* ToDo Form */
+#todo-form {
+    display: flex;
+    justify-content: center; /* 가운데 정렬 */
+    margin-bottom: 10px; /* 아래 요소와의 간격 */
+    position: relative;
+    z-index: 1;
+}
+
+#todo-form input {
+    width: 300px;
+    padding: 10px;
+    font-size: 18px;
+}
+
+/* ToDo List */
+#todo-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    color: rgb(5, 5, 5);
+    position: relative;
+    z-index: 1;
+}
+
+#todo-list li {
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+/* Quotes */
+#quote {
+    position: absolute;
+    bottom: 20px; /* 화면 아래쪽에 배치 */
+    left: 50%;
+    transform: translateX(-50%); /* 중앙 정렬 */
+    color: rgb(8, 8, 8);
+    text-align: center;
+    z-index: 1; /* 배경 이미지보다 앞에 있도록 설정 */
+}
+
+#quote span:first-child {
+    display: block;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+#quote span:last-child {
+    font-size: 16px;
+    opacity: 0.8;
+}
